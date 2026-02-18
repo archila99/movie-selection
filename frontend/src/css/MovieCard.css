@@ -44,25 +44,38 @@
   padding: 1rem;
 }
 
-.movie-card:hover .movie-overlay {
+.movie-card:hover .movie-overlay,
+.movie-overlay:focus-within {
   opacity: 1;
+}
+
+/* Show favorite button on touch devices (no hover) */
+@media (hover: none) {
+  .movie-overlay {
+    opacity: 1;
+  }
 }
 
 .favorite-btn {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 0.5rem;
+  right: 0.5rem;
   color: white;
   font-size: 1.5rem;
   padding: 0.5rem;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  min-width: 44px;
+  min-height: 44px;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+  cursor: pointer;
 }
 
 .favorite-btn:hover {
@@ -115,10 +128,23 @@
   .movie-info {
     padding: 0.75rem;
   }
+}
 
-  .favorite-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 1.2rem;
+@media (max-width: 480px) {
+  .movie-info {
+    padding: 0.5rem;
+  }
+
+  .movie-info h3 {
+    font-size: 0.85rem;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .movie-info p {
+    font-size: 0.8rem;
   }
 }

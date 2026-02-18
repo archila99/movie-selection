@@ -54,17 +54,22 @@ function Home() {
         <input
           type="text"
           placeholder="Search for movies"
-          className="search-form-input"
+          className="search-input"
+          aria-label="Search movies"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
         />
-        <button type="submit" className="search-btn">
-          Search
+        <button type="submit" className="search-button" disabled={loading}>
+          {loading ? "Searching…" : "Search"}
         </button>
       </form>
 
       {/* Error message */}
-      {error && <div className="error-message">{error}</div>}
+      {error && (
+        <div className="error-message" role="alert">
+          {error}
+        </div>
+      )}
 
       {/* Loading indicator or movies grid */}
       {loading ? (

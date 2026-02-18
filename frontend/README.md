@@ -1,6 +1,21 @@
-# React + Vite
+# Movie App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React movie app with favorites, search, and mobile support.
+
+## Deploy to Vercel (via GitHub)
+
+1. Push this repo to GitHub.
+2. Go to [vercel.com](https://vercel.com) and sign in with GitHub.
+3. Click **Add New** → **Project** and import your GitHub repo.
+4. Set **Root Directory** to `frontend` (important: the app lives in the `frontend` folder).
+5. Keep defaults: **Framework Preset** = Vite, **Build Command** = `npm run build`, **Output Directory** = `dist`.
+6. Click **Deploy**.
+
+`vercel.json` is included for SPA routing (direct URLs like `/favorites` work after refresh).
+
+---
+
+## Local development
 
 Currently, two official plugins are available:
 
