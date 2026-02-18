@@ -1,5 +1,5 @@
 import { NavLink } from "react-router-dom";
-import "../css/NavBar.css";
+import "../css/Navbar.css";
 import { useMovieContext } from "../contexts/MovieContext";
 
 function NavBar() {
