@@ -8,7 +8,10 @@ function NavBar() {
   return (
     <nav className="navbar">
       <div className="navbar-brand">
-        <NavLink to="/">Movie App</NavLink>
+        <NavLink to="/" className="navbar-brand-link">
+          <span className="navbar-brand-icon">🎬</span>
+          <span>Movie App</span>
+        </NavLink>
       </div>
       <div className="navbar-links">
         <NavLink to="/" className="nav-link" end>
