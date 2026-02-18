@@ -1,5 +1,11 @@
-const API_KEY = "5af5e15c00d01f07b4bc7ee3416a9a95";
+const API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 const BASE_URL = "https://api.themoviedb.org/3";
+
+if (!API_KEY) {
+  console.warn(
+    "VITE_TMDB_API_KEY is missing. Create a .env file with VITE_TMDB_API_KEY=your_key. Get one at https://www.themoviedb.org/settings/api"
+  );
+}
 
 const handleResponse = async (response) => {
   const data = await response.json();
